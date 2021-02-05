@@ -20,7 +20,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # サインアップボタンを押すとユーザーモデルのカウントが1上がることを確認する
       expect{find('input[name="commit"]').click}.to change { User.count }.by(1)
       # トップページへ遷移する
-      expect(crrent_path).to eq(root_path)
+      expect(current_path).to eq(root_path)
       # カーソルを合わせるとログアウトボタンが表示されることを確認する
       expect(find('.user_nav').find('span').hover).to have_content('ログアウト')
       expect(page).to have_no_content('新規登録')
